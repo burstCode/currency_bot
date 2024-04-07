@@ -3,7 +3,6 @@ import logging
 import datetime
 import requests
 import sys
-from os import getenv
 
 from aiogram import Bot, Dispatcher
 from aiogram.enums import ParseMode
@@ -11,13 +10,13 @@ from aiogram.filters import CommandStart, Command
 from aiogram.types import Message
 from aiogram.utils.markdown import hbold
 
-# from config import *
+import config
 
-TOKEN = getenv("BOT_TOKEN")
+TOKEN = config.TOKEN
 
-API_LINK = getenv("API_LINK")
+API_LINK = config.API_LINK
 
-CHAT_ID = getenv("CHAT_ID")
+CHAT_ID = config.CHAT_ID
 
 dp = Dispatcher()
 bot = Bot(TOKEN, parse_mode=ParseMode.HTML)
